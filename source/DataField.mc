@@ -6,28 +6,28 @@ using Toybox.Math;
 using Toybox.FitContributor;
 
 class DataField extends WatchUi.SimpleDataField {
-	const BATT_FIELD_ID = 0;
-	hidden var batt_field;
-	hidden var old_batt;
+	const PRES_FIELD_ID = 0;
+	hidden var pres_field;
+	hidden var old_pres;
 
 	function initialize() {
 		SimpleDataField.initialize();
-		label = "Battery";
+		label = "Pressure";
 
-		batt_field = createField(
-				"battery",
-				BATT_FIELD_ID,
+		pres_field = createField(
+				"presery",
+				PRES_FIELD_ID,
 				FitContributor.DATA_TYPE_FLOAT,
-				{:mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>"%"});
+				{:mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>"mmHg"});
 	}
 
 	function compute(info) {
-		var stats = System.getSystemStats();
-		var new_batt = stats.battery;
-		if (new_batt != old_batt) {
-			batt_field.setData(new_batt);
-			old_batt = new_batt;
+		var stats = Activity.getActivityInfo();
+		var new_pres = stats.ambientPressure;
+		if (new_pres != old_pres) {
+			pres_field.setData(new_pres);
+			old_pres = new_pres;
 		}
-		return stats.battery.format("%0.1f");
+		return stats.presery.format("%0.1f");
 	}
 }
