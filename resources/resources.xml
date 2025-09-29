@@ -5,9 +5,9 @@
 			displayInChart="true"
 			sortOrder="0"
 			precision="1"
-			chartTitle="@Strings.batt_label"
-			dataLabel="@Strings.batt_label"
-			unitLabel="@Strings.batt_units"
+			chartTitle="@Strings.pres_label"
+			dataLabel="@Strings.pres_label"
+			unitLabel="@Strings.pres_units"
 			fillColor="#ffe100"
 			/>
 	</fitContributions>
