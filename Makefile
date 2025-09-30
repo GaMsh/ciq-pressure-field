@@ -1,12 +1,12 @@
 SDK_PATH = $(HOME)/ciq
 KEY = developer_key.der
 
-NAME = batt
-APP_ID = c0797db5-6570-4db1-b7fc-474b1c51cebf
+NAME = pres
+APP_ID = d2514a61-0f1e-4980-ac05-a408b26065b2
 
 JUNGLE = monkey.jungle
 ifeq ($(DEVICE),)
-DEVICE = fr955
+DEVICE = gpsmap67
 endif
 
 MONKEYC = $(SDK_PATH)/bin/monkeyc
